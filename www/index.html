@@ -7,7 +7,17 @@
     <script src="components/loader.js"></script>
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="keys.js"></script>
     <script>
+        let ncmb= new NCMB(appKey, clientKey); 
+        let TestClass= ncmb.DataStore("RegisterTest2"); 
+        let testRecord= new TestClass(); 
+        testRecord.set("message2", "hello, world"); 
+        testRecord.save()  .then(function(m){
+                alert("success:" + JSON.stringify(m));  })
+                  .catch(function(m){
+                          alert("fail:" + JSON.stringify(m));
+                            });
     </script>
 </head>
 <body>
